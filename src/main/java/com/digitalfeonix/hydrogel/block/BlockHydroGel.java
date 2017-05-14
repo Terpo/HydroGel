@@ -12,53 +12,50 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockHydroGel extends BlockBase {
 
-    public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-    private final Integer lvl = 7;
+	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
+	private final Integer lvl = 7;
 
-    public BlockHydroGel(String name) {
+	public BlockHydroGel(String name) {
 
-        // this is what allows the hydration to happen
-        super(Material.WATER, name);
-        // don't make instant harvest
-        this.setHardness(1.0f);
-        this.blockSoundType = SoundType.SLIME;
-        this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, lvl));
-    }
+		// this is what allows the hydration to happen
+		super(Material.WATER, name);
+		// don't make instant harvest
+		this.setHardness(1.0f);
+		this.blockSoundType = SoundType.SLIME;
+		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, this.lvl));
+	}
 
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {LEVEL});
-    }
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[]{LEVEL});
+	}
 
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(LEVEL, lvl);
-    }
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(LEVEL, this.lvl);
+	}
 
-    public int getMetaFromState(IBlockState state)
-    {
-        return lvl;
-    }
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return this.lvl;
+	}
 
-    // prevent blocks from being place where this block is (it supposed to be solid)
-    @Override
-    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
-    {
-        return false;
-    }
+	// prevent blocks from being place where this block is (it supposed to be solid)
+	@Override
+	public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos) {
+		return false;
+	}
 
-    // allow things like torches and stuff to be put on it
-    @Override
-    public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos)
-    {
-        return true;
-    }
+	// allow things like torches and stuff to be put on it
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos) {
+		return true;
+	}
 
-    // allow the block to be moved by pistons like it is a piece of dirt
-    @Override
-    public EnumPushReaction getMobilityFlag(IBlockState state)
-    {
-        return EnumPushReaction.NORMAL;
-    }
+	// allow the block to be moved by pistons like it is a piece of dirt
+	@Override
+	public EnumPushReaction getMobilityFlag(IBlockState state) {
+		return EnumPushReaction.NORMAL;
+	}
 
 }

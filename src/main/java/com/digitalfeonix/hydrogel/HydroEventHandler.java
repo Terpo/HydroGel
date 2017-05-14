@@ -14,7 +14,7 @@ public class HydroEventHandler {
         {
             if (event.getTarget().typeOfHit == RayTraceResult.Type.BLOCK)
             {
-                if (event.getWorld().getBlockState(event.getTarget().getBlockPos()).getBlock() == ModBlocks.blockHydroGel)
+                if (event.getWorld().getBlockState(event.getTarget().getBlockPos()).getBlock() == ModBlocks.hydrogel)
                 {
                     event.setCanceled(true);
                 }

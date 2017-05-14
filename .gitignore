@@ -16,3 +16,9 @@ build
 # other
 eclipse
 run
+.settings
+bin
+*.launch
+*.txt
+.classpath
+.project

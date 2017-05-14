@@ -1,0 +1,29 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"textures": {
+			"all": "hydrogel:blocks/hydrogel"
+		}
+	},
+	"variants": {
+		"level=0": {"model": "cube_all"},
+		"level=1": {"model": "cube_all"},
+		"level=2": {"model": "cube_all"},
+		"level=3": {"model": "cube_all"},
+		"level=4": {"model": "cube_all"},
+		"level=5": {"model": "cube_all"},
+		"level=6": {"model": "cube_all"},
+		"level=7": {"model": "cube_all"},
+		"level=8": {"model": "cube_all"},
+		"level=9": {"model": "cube_all"},
+		"level=10": {"model": "cube_all"},
+		"level=11": {"model": "cube_all"},
+		"level=12": {"model": "cube_all"},
+		"level=13": {"model": "cube_all"},
+		"level=14": {"model": "cube_all"},
+		"level=15": {"model": "cube_all"},
+		"inventory": {
+			"model": "cube_all"
+		}
+	}
+}

@@ -13,7 +13,7 @@ public class ModRecipes {
     public static void init() {
         // Crafting
         GameRegistry.addShapedRecipe(
-            new ItemStack(ModBlocks.blockHydroGel,1),
+            new ItemStack(ModBlocks.hydrogel,1),
                 "BsB",
                 "sWs",
                 "BsB",
